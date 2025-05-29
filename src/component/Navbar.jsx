@@ -7,21 +7,32 @@ import MyOrder from './MyOrder'
 import Products from './Products'
 import Home from './Home'
 import ProductInfo from './ProductsInfo';
+import Login from './LogIn'
+import LogOut from './LogOut'
+import MyContext from '../context'
+import { useContext } from 'react'
 const Navbar = () => {
-    return (
-        <div className="my-background">
-            <nav>
-                <Link to="/">Home</Link>
-                <Link to="Cart">Cart</Link>
-                <Link to="ContactUs">Contact us</Link>
-                <Link to="AboutUs">About us</Link>
-                <Link to="Products">Products</Link>
-                <Link to="MyOrder">My order</Link>
-            </nav>
-            {/* כאן ייכנס התוכן של כל דף */}
-            <Outlet />
-        </div>
-    )
-}
+  const { CurrentUser } = useContext(MyContext);
 
-export default Navbar
+  return (
+    <div className="my-background">
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="Cart">Cart</Link>
+        <Link to="ContactUs">Contact us</Link>
+        <Link to="AboutUs">About us</Link>
+        <Link to="Products">Products</Link>
+        <Link to="MyOrder">My order</Link>
+
+        {CurrentUser ? (
+          <Link to="/LogOut">LogOut</Link>
+        ) : (
+          <Link to="/LogIn">LogIn</Link>
+        )}
+      </nav>
+      <Outlet />
+    </div>
+  );
+};
+
+export default Navbar;
