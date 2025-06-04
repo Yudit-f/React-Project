@@ -11,14 +11,16 @@ import Navbar from './Navbar';
 import Login from './LogIn';
 import { MyProvider } from '../context';
 import LogOut from './LogOut';
+import AddProduct from './AddProduct';
 
-const Router1 = ({ cartitems, setcartitems, sum, setsum, items, store }) => {
+const Router1 = ({ cartitems, setcartitems, sum, setsum, items,setitems, store }) => {
   return (
     <BrowserRouter>
       <MyProvider value={store}>
         <Routes>
           <Route path="/" element={<Navbar />}>
             <Route index element={<Home />} />
+            <Route path="AddProduct" element={<AddProduct items={items} setitems={setitems} />} />
             <Route path="AboutUs" element={<AboutUs />} />
             <Route path="ContactUs" element={<ContactUs />} />
             <Route path="LogOut" element={<LogOut  setsum={ setsum} setcartitems={setcartitems}  /> } />
@@ -38,6 +40,7 @@ const Router1 = ({ cartitems, setcartitems, sum, setsum, items, store }) => {
               element={
                 <Products
                   items={items}
+                  setitems={setitems}
                   cartitems={cartitems}
                   setcartitems={setcartitems}
                   sum={sum}

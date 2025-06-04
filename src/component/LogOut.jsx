@@ -14,8 +14,6 @@ const LogOut = ( {setsum,setcartitems}) => {
       setsum(0);  
     navigate('/'); 
   }, [navigate]);
-
-  return <div>מתנתק...</div>;
 };
 
 export default LogOut;

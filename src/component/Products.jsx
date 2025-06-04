@@ -1,10 +1,17 @@
 import React from 'react';
 import ProductInfo from './ProductsInfo'
 import { useNavigate } from 'react-router-dom';
+import MyContext from '../context';
+import { useContext } from 'react';
+import  { useState } from 'react';
+import AddProduct from './AddProduct';
 
-const Products = ({ items,cartitems,setcartitems,sum,setsum}) => {
+
+
+const Products = ({ items,setitems,cartitems,setcartitems,sum,setsum}) => {
   const navigate = useNavigate();
-
+  const { CurrentUser } = useContext(MyContext);
+  const { manager } = useContext(MyContext);
   // בלחיצה על כפתור, ננווט לדף מוצר לפי ה-id שלו
   const handleClick = (id) => {
 navigate(`/ProductsInfo/${id}`);
@@ -14,7 +21,41 @@ navigate(`/ProductsInfo/${id}`);
     alert("item added!!")
   setsum(prevSum => prevSum + i.price); // עדכון הסכום הנוכחי
   }
+  const deleteitem=(id)=>{
+   // מציאת אינדקס של האיבר לפי הID
+    const index = items.findIndex(p => p.id == id)
+    //שכפל המערך המקורי
+    const coppyarr = [...items]
+    // מחיקת האיבר מהמערך
+    // מהאינדקס הרצוי ועוד אחד
+    coppyarr.splice(index, 1)
+    //עדכון המערך הנוכחי
+    setitems(coppyarr)
+  }
+ const addProduct = () => {
+  
+  navigate(`/AddProduct/`)
 
+  // const addProduct = () => {
+  //   if (!id || !name || !pic || !amount) {
+  //     alert('נא למלא את כל השדות');
+  //     return;
+  //   }
+  //   const newProduct = {
+  //     id: Number(id),
+  //     name,
+  //     pic,
+  //     amount: Number(amount),
+  //     price: 0,
+  //   };
+  //   setItems([...items, newProduct]);
+  //   setId('');
+  //   setName('');
+  //   setPic('');
+  //   setAmount('');
+  // };
+
+ }
   return (
     <div className="products-container">
       {items.map(i => (
@@ -25,12 +66,20 @@ navigate(`/ProductsInfo/${id}`);
           <p>Amount: {i.amount} units</p>
           <button onClick={() => handleClick(i.id)}>More Details</button>
           <button onClick={() => addtocart(i)}>Add item</button>
-
-
+          {manager && (
+  <button onClick={() => deleteitem(i.id)}>delete item</button>
+)}
         </div>
+        
+        
       ))}
+      <div>
+        {manager && (
+  <button onClick={() => addProduct()}>add items</button>
+    )}
+      </div>
     </div>
-  );
-};
+  )
+}
 
 export default Products;
