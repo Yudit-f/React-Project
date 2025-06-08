@@ -1,8 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import MyContext from '../context';
 
 const Cart = ({ cartitems,sum,setsum,setcartitems }) => {
 const navigate = useNavigate();
+  const { CurrentUser } = useContext(MyContext);
+
   const deletitem=(id)=>{
    // מציאת אינדקס של האיבר לפי הID
     const index = cartitems.findIndex(p => p.id == id)
@@ -22,9 +26,13 @@ const navigate = useNavigate();
     
 
     }
-    const Payment =()=>{
-   navigate('/MyOrder');
- }
+    const Payment = () => {
+    if (!CurrentUser) {
+      alert('אנא התחבר/י כדי להמשיך לתשלום');
+      return;
+    }
+    navigate('/MyOrder');
+  };
   return (
     <div className="cart-container">
       <h1>עגלת הקניות שלך</h1>

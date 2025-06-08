@@ -66,7 +66,6 @@ const [items, setitems] = useState([
   const store = {
     setUser: setUsers,
     users,
-
     addUser: (newUser) => {
       setUsers([...users, newUser]);
     },
