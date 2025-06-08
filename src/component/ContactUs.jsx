@@ -5,9 +5,11 @@ import MyOrder from './MyOrder'
 import Products from './Products'
 import Home from './Home'
 const ContactUs = () => {
-const handleSubmit = () => {
-    alert('ההודעה נשלחה בהצלחה!')
-   }
+const handleSubmit = (e) => {
+    e.preventDefault(); // מונע רענון דף
+    alert('ההודעה נשלחה בהצלחה!');
+navigate('/', { replace: true });
+  };
 
   return (
     <div className="contact-form-container">
