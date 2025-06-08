@@ -36,24 +36,7 @@ navigate(`/ProductsInfo/${id}`);
   
   navigate(`/AddProduct/`)
 
-  // const addProduct = () => {
-  //   if (!id || !name || !pic || !amount) {
-  //     alert('נא למלא את כל השדות');
-  //     return;
-  //   }
-  //   const newProduct = {
-  //     id: Number(id),
-  //     name,
-  //     pic,
-  //     amount: Number(amount),
-  //     price: 0,
-  //   };
-  //   setItems([...items, newProduct]);
-  //   setId('');
-  //   setName('');
-  //   setPic('');
-  //   setAmount('');
-  // };
+ 
 
  }
   return (

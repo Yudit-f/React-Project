@@ -10,16 +10,16 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   if (!users || !Array.isArray(users)) {
-    alert('רשימת המשתמשים לא זמינה');
+    alert('User list is not available');
     return null;
   }
 
   const login = () => {
     const user = users.find(u => u.userName === userName && u.password === password);
     if (!user) {
-      alert('אחד הפרטים שגויים');
+      alert('One of the details is incorrect');
     } else {
-      alert('התחברת בהצלחה');
+      alert('Login successful');
       userLoggedIn(user);
       if (user.userName === "manager" && user.password === "1") {
         setmanager(true);
@@ -30,7 +30,7 @@ const Login = () => {
 
   return (
     <div className="login-form-container">
-      <label htmlFor="username">שם משתמש</label>
+      <label htmlFor="username">Username</label>
       <input
         id="username"
         type="text"
@@ -38,7 +38,7 @@ const Login = () => {
         onChange={e => setUserName(e.target.value)}
       />
 
-      <label htmlFor="password">סיסמה</label>
+      <label htmlFor="password">Password</label>
       <input
         id="password"
         type="password"
@@ -46,7 +46,7 @@ const Login = () => {
         onChange={e => setPassword(e.target.value)}
       />
 
-      <button onClick={login}>התחברות</button>
+      <button onClick={login}>Log In</button>
     </div>
   );
 };

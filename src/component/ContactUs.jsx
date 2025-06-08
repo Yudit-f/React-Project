@@ -15,7 +15,7 @@ const handleSubmit = (e) => {
 
   return (
     <div className="contact-form-container">
-      <h1>צור קשר</h1>
+      <h1> Contact Us</h1>
       <form onSubmit={handleSubmit} className="contact-form">
         <input
           type="text"

@@ -28,14 +28,15 @@ const navigate = useNavigate();
     }
     const Payment = () => {
     if (!CurrentUser) {
-      alert('אנא התחבר/י כדי להמשיך לתשלום');
+      alert("Please log in to proceed to payment."
+);
       return;
     }
     navigate('/MyOrder');
   };
   return (
     <div className="cart-container">
-      <h1>עגלת הקניות שלך</h1>
+      <h1>My cart  </h1>
       <div className="cart-grid">
         {cartitems.map(i => (
           <div key={i.id} className="product-card">

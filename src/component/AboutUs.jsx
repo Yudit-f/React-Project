@@ -1,29 +1,27 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
-
 const AboutUs = () => {
   return (
     <div className='aboutus'>
       
       <p className='details'>
-        🍣 דגש על טריות ואיכות ללא פשרות<br />
-        🍣 שילובים ייחודיים שמפתיעים את החך<br />
-        🍣 חוויית שירות מוקפדת ואווירה חמה<br />
-        הצטרפו אלינו למסע קולינרי שכולו הנאה וחדשנות – כי סושי טוב מתחיל באהבה לפרטים הקטנים.
+        🍣 Emphasis on uncompromising freshness and quality<br />
+        🍣 Unique combinations that surprise the palate<br />
+        🍣 Meticulous service experience and a warm atmosphere<br />
+        Join us on a culinary journey full of pleasure and innovation – because great sushi starts with attention to detail.
       </p>
 
-      <p >
-        ההיסטוריה של [שם החנות] מתחילה בחזון אחד פשוט – להביא את הסושי האיכותי ביותר לקהל שלנו, תוך שמירה על המסורת היפנית ושילוב אלמנטים מודרניים שירגשו כל חובב אוכל.
-        הכול התחיל עם אהבה עמוקה למטבח היפני ולדיוק שמאפיין אותו. מייסדי החנות, עם ניסיון רב בעולם הגסטרונומיה והתשוקה לסושי אמיתי, חיפשו את הדרך ליצור מקום שבו כל רול מספר סיפור, וכל ביס משאיר חותם.
-        לאורך השנים, החנות גדלה והתפתחה, אבל הערכים הבסיסיים נשארו זהים.
+      <p>
+        The history of [Store Name] begins with one simple vision – to bring the highest quality sushi to our customers, while preserving Japanese tradition and incorporating modern elements that excite every food lover.
+        It all started with a deep love for Japanese cuisine and the precision that defines it. The founders of the store, with extensive experience in the gastronomy world and a passion for authentic sushi, sought to create a place where every roll tells a story, and every bite leaves a mark.
+        Over the years, the store has grown and evolved, but the core values have remained the same.
       </p>
-
 
       <div>
         <video width="600" controls autoPlay muted>
           <source src="/Pictures/VideoOpening.mp4" type="video/mp4" />
-          הדפדפן שלך לא תומך בווידאו
+          Your browser does not support the video tag.
         </video>
       </div>
     </div>

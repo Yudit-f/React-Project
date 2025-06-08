@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link,Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import ContactUs from './ContactUs'
 import Cart from './Cart'
 import AboutUs from './AboutUs'
@@ -11,11 +11,17 @@ const Home = () => {
   return (
     <div className="my-background">
       
-<div className='Hometext'>
-            <h1>ברוכים הבאים לעולם הסושי!</h1>
-            <p> אצלנו תמצאו שילוב מושלם של מסורת יפנית וטעמים מודרניים, עם דגש על טריות, איכות ודיוק אומנותי.הסושי שלנו נחתך באהבה ומוגש בתשוקה, כדי להעניק לכם חוויה קולינרית ייחודית – בין אם אתם חובבי סשימי מתוחכם או מתרגשים לגלות רולים חדשים.אז שבו בנחת, הזמינו את המנה האהובה עליכם, ותנו לנו לקחת אתכם למסע טעמים קסום.</p>
-          </div>
-      {/* כאן ייכנס התוכן של כל דף */}
+      <div className='Hometext'>
+        <h1>Welcome to the World of Sushi!</h1>
+        <p>
+          Here you will find the perfect blend of Japanese tradition and modern flavors, 
+          with an emphasis on freshness, quality, and artistic precision. Our sushi is 
+          lovingly sliced and passionately served to provide you with a unique culinary experience – 
+          whether you are a fan of sophisticated sashimi or excited to discover new rolls. 
+          So sit back, order your favorite dish, and let us take you on a magical flavor journey.
+        </p>
+      </div>
+      {/* The content of each page will be inserted here */}
       <Outlet />
     </div>
   );
