@@ -4,11 +4,13 @@ import AboutUs from './AboutUs'
 import MyOrder from './MyOrder'
 import Products from './Products'
 import Home from './Home'
+import { useNavigate } from 'react-router-dom'
 const ContactUs = () => {
+    const navigate = useNavigate();
 const handleSubmit = (e) => {
     e.preventDefault(); // מונע רענון דף
     alert('ההודעה נשלחה בהצלחה!');
-navigate('/', { replace: true });
+    navigate('/'); // ניווט לעמוד הבית
   };
 
   return (
